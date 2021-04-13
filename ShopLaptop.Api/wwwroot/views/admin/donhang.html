@@ -1,0 +1,362 @@
+﻿
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>dashboard</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="laptop" />
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <!-- Bootstrap Core CSS -->
+    <link href="/css/bootstrap.min.css" rel='stylesheet' type='text/css' />
+    <!-- Custom CSS -->
+    <link href="/css/style.css" rel='stylesheet' type='text/css' />
+    <link rel="stylesheet" href="/css/morris.css" type="text/css" />
+    <!-- Graph CSS -->
+    <link href="/css/font-awesome.css" rel="stylesheet">
+    <!-- jQuery -->
+    <script src="/js/jquery-2.1.4.min.js"></script>
+    <!-- //jQuery -->
+    <!-- <link href='//fonts.googleapis.com/css?family=Roboto:700,500,300,100italic,100,400' rel='stylesheet' type='text/css'/>
+        <link href='//fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'> -->
+    <!-- lined-icons -->
+    <link rel="stylesheet" href="/css/icon-font.min.css" type='text/css' />
+
+    <!-- tables -->
+    <link rel="stylesheet" type="text/css" href="/css/table-style.css" />
+    <link rel="stylesheet" type="text/css" href="/css/basictable.css" />
+    <script type="text/javascript" src="/js/jquery.basictable.min.js"></script>
+    <style type="text/css">
+        body {
+            font-family: GoogleSans-Regular;
+        }
+
+        @font-face {
+            font-family: 'GoogleSans-Bold';
+            src: url('/fonts/GoogleSans-Bold.otf') format('opentype');
+        }
+
+        @font-face {
+            font-family: 'GoogleSans-BoldItalic';
+            src: url('/fonts/GoogleSans-BoldItalic.otf') format('opentype');
+        }
+
+        @font-face {
+            font-family: 'GoogleSans-Italic';
+            src: url('/fonts/GoogleSans-Italic.otf') format('opentype');
+        }
+
+        @font-face {
+            font-family: 'GoogleSans-Medium';
+            src: url('/fonts/GoogleSans-Medium.otf') format('opentype');
+        }
+
+        @font-face {
+            font-family: 'GoogleSans-MediumItalic';
+            src: url('/fonts/GoogleSans-MediumItalic.otf') format('opentype');
+        }
+
+        @font-face {
+            font-family: 'GoogleSans-Regular';
+            src: url('/fonts/GoogleSans-Regular.otf') format('opentype');
+        }
+    </style>
+</head>
+<body>
+    <div class="page-container">
+        <!--/content-inner-->
+        <div class="left-content">
+            <div class="mother-grid-inner">
+                <!--header start here-->
+                <div class="header-main">
+
+
+
+                    <div class="profile_details w3l">
+                        <ul>
+                            <li class="dropdown profile_details_drop">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                                    <div class="profile_img">
+                                        <span class="prfil-img"><img src="/images/in4.jpg" alt=""> </span>
+                                        <div class="user-name">
+                                            <p>Thông tin</p>
+                                            <span>Admin</span>
+                                        </div>
+                                        <i class="fa fa-angle-down"></i>
+                                        <i class="fa fa-angle-up"></i>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                </a>
+                                <ul class="dropdown-menu drp-mnu">
+                                    <li> <a href="#"><i class="fa fa-cog"></i> Cài đặt</a> </li>
+                                    <li> <a href="#"><i class="fa fa-user"></i> Thông tin</a> </li>
+                                    <li> <a href="#"><i class="fa fa-sign-out"></i> Đăng xuất</a> </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="clearfix"> </div>
+                </div>
+                <!--heder end here-->
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="index1.html">Trang chủ</a><i class="fa fa-angle-right"></i>Đơn hàng</li>
+                </ol>
+
+                <!-- grids -->
+                <div class="grids">
+
+
+
+                    <div class="agile-calendar-grid">
+                        <div class="page">
+
+                            <div class="w3l-calendar-left">
+                                <div class="form-group has-search">
+                                    <span class="fa fa-search"></span>
+                                    <input type="text" class="search search_form" placeholder="Search">
+                                </div>
+                                <a class="agile-icon" id="add" href="#" data-toggle="modal" data-target="#myModal" style="font-size:18px;">
+                                    <i class="fa fa-plus-circle" aria-hidden="true"> Thêm hóa đơn</i>
+                                </a>
+                                <div class="calendar-heading">
+                                    <!-- 									<p>Noi dung</p>
+        -->
+                                    <div class="agile-tables">
+                                        <div class="w3l-table-info">
+                                            <!--<p style="font-family:GoogleSans-Regular; font-size:22px;">Danh sách đơn hàng</p>-->
+                                            <table id="mahd">
+                                                <thead>
+                                                    <tr>
+                                                        <th fileName="mahd">Mã hóa đơn</th>
+                                                        <th fileName="username">Tên đăng nhập</th>
+                                                        <!--<th fileName="hoten">Họ tên</th>-->
+                                                        <th fileName="ngaylap" formatType="ngaythang">Ngày lập</th>
+                                                        <th fileName="ngaythanhtoan" formatType="ngaythang">Ngày thanh toán</th>
+                                                        <th fileName="trangthai">Trạng thái</th>
+                                                        <th fileName="active" formatType="thanhtoan">Tình trạng</th>
+                                                        <th fileName="chinhsua" style="text-align: center;">Chỉnh sửa</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                </tbody>
+                                            </table>
+                                        </div>
+
+
+
+                                        <!-- Modal -->
+                                        <div class="modal fade" id="myModal" role="dialog">
+                                            <div class="modal-dialog">
+
+                                                <!-- Modal content-->
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                        <h4 class="modal-title">Cập nhật trạng thái đơn hàng</h4>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <form action="">
+                                                            <div class="form-group">
+                                                                <label for="ma">Mã hóa đơn:</label>
+                                                                <input type="text" class="form-control" fileName="mahd" required>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label for="ma">Usename:</label>
+                                                                <input type="text" class="form-control" fileName="username" required>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label for="ma">Ngày lập:</label>
+                                                                <input type="text" class="form-control" fileName="ngaylap" required>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label for="ma">Ngày thanh toán:</label>
+                                                                <input type="text" class="form-control" fileName="ngaythanhtoan" required>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label for="ma">Trạng thái:</label>
+                                                                <input type="text" class="form-control" fileName="trangthai" required>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label for="status">Tình trạng:</label>
+                                                                <input type="text" class="form-control" fileName="active" required>
+                                                            </div>
+                                                            <button type="submit" id="btn-save" class="btn btn-default">Save</button>
+                                                        </form>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" id="btn-close" class="btn btn-default" data-dismiss="modal">Close</button>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <!--End modal-->
+                                        <div class="modal fade" id="myModal1" role="dialog">
+                                            <div class="modal-dialog">
+
+                                                <!-- Modal content-->
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                        <h4 class="modal-title">Bạn có chắc chắn muốn xóa <span style="color: red"></span> hay không?</h4>
+                                                    </div>
+                                                    <div class="modal-body">
+
+                                                        <form action="">
+                                                            <button type="submit" id="btn-delete" class="btn btn-default" style="margin-left: 43%;">
+                                                                Xóa
+                                                            </button>
+                                                        </form>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="clearfix"> </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- //grids -->
+                <!--photoday-section-->
+
+
+                <div class="col-sm-4 wthree-crd">
+                    <div class="card">
+                        <div class="card-body">
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="clearfix"></div>
+
+                <!--//photoday-section-->
+                <!-- script-for sticky-nav -->
+                <script>
+                    $(document).ready(function () {
+                        var navoffeset = $(".header-main").offset().top;
+                        $(window).scroll(function () {
+                            var scrollpos = $(window).scrollTop();
+                            if (scrollpos >= navoffeset) {
+                                $(".header-main").addClass("fixed");
+                            } else {
+                                $(".header-main").removeClass("fixed");
+                            }
+                        });
+
+                    });
+                </script>
+                <!-- /script-for sticky-nav -->
+                <!--inner block start here-->
+                <div class="inner-block">
+
+                </div>
+                <!--inner block end here-->
+                <!--copy rights start here-->
+                <div class="copyrights">
+                    <p>© 2018 N5QPT. All Rights Reserved | Design by  <a href="http://w3layouts.com/" target="_blank">W3layouts</a> </p>
+                </div>
+                <!--COPY rights end here-->
+            </div>
+        </div>
+        <!--//content-inner-->
+        <!--/sidebar-menu-->
+        <div class="sidebar-menu">
+            <header class="logo1">
+                <a href="#" class="sidebar-icon"> <span class="fa fa-bars"></span> </a>
+            </header>
+            <div style="border-top:1px ridge rgba(255, 255, 255, 0.15)"></div>
+            <div class="menu">
+                <ul id="menu">
+                    <li><a href="index1.html"><i class="fa fa-tachometer"></i> <span>Trang chủ</span><div class="clearfix"></div></a></li>
+
+
+                    <li id="menu-academico">
+                        <a href="#"><i class="fa fa-envelope nav_icon" aria-hidden="true"></i><span>Đơn hàng</span> <span class="fa fa-angle-right" style="float: right"></span><div class="clearfix"></div></a>
+                        <ul id="menu-academico-sub">
+                            <li id="menu-academico-avaliacoes"><a href="donhang.html">Hóa đơn</a></li>
+                            <li id="menu-academico-avaliacoes"><a href="cart-detail.html">Chi tiết hóa đơn</a></li>
+                        </ul>
+                    </li>
+
+                    <li id="menu-academico">
+                        <a href="#"><i class="fa fa-list-ul" aria-hidden="true"></i><span>Sản phẩm</span> <span class="fa fa-angle-right" style="float: right"></span><div class="clearfix"></div></a>
+                        <ul id="menu-academico-sub">
+                            <li id="menu-academico-avaliacoes"><a href="sanpham.html">Quản lý sản phẩm</a></li>
+                            <li id="menu-academico-avaliacoes"><a href="loaisanpham.html">Quản lý loại sản phẩm</a></li>
+                            <li id="menu-academico-avaliacoes"><a href="cart-detail.html">Chi tiết hóa đơn</a></li>
+                        </ul>
+                    </li>
+
+                    <li id="menu-academico"><a href="khachhang.html"><i class="fa fa-users"></i><span>Khách hàng</span><div class="clearfix"></div></a></li>
+
+                    <li id="menu-academico"><a href="nhasanxuat.html"><i class="fa fa-home"></i><span>Nhà sản xuất</span><div class="clearfix"></div></a></li>
+
+                    <li id="menu-academico"><a href="nhanvien.html"><i class="fa fa-users"></i><span>Nhân viên</span><div class="clearfix"></div></a></li>
+
+                    <li id="menu-academico">
+                        <a href="#"><i class="fa fa-shopping-cart" aria-hidden="true"></i><span>Nhập hàng</span> <span class="fa fa-angle-right" style="float: right"></span><div class="clearfix"></div></a>
+                        <ul id="menu-academico-sub">
+                            <li id="menu-academico-avaliacoes"><a href="phieunhap.html">Phiếu nhập</a></li>
+                            <li id="menu-academico-avaliacoes"><a href="chitietphieunhap.html">Chi tiết phiếu nhập</a></li>
+                        </ul>
+                    </li>
+
+                    <li id="menu-academico"><a href="kho.html"><i class="fa fa-home"></i><span>Kho</span><div class="clearfix"></div></a></li>
+
+                    <li id="menu-academico">
+                        <a href="#"><i class="fa fa-file-text-o"></i>  <span>Khác</span> <span class="fa fa-angle-right" style="float: right"></span><div class="clearfix"></div></a>
+                        <ul id="menu-academico-sub">
+                            <li id="menu-academico-boletim"><a href="calendar.html">Lịch</a></li>
+                            <!-- 					<li id="menu-academico-avaliacoes" ><a href="signin.html">Đăng nhập</a></li>
+            <li id="menu-academico-avaliacoes" ><a href="signup.html">Đăng ký</a></li> -->
+
+
+                        </ul>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+    <script>
+        var toggle = true;
+
+        $(".sidebar-icon").click(function () {
+            if (toggle) {
+                $(".page-container").addClass("sidebar-collapsed").removeClass("sidebar-collapsed-back");
+                $("#menu span").css({ "position": "absolute" });
+            }
+            else {
+                $(".page-container").removeClass("sidebar-collapsed").addClass("sidebar-collapsed-back");
+                setTimeout(function () {
+                    $("#menu span").css({ "position": "relative" });
+                }, 400);
+            }
+
+            toggle = !toggle;
+        });
+    </script>
+    <!--js -->
+    <script src="/js/jquery.nicescroll.js"></script>
+    <script src="/js/scripts.js"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="/js/bootstrap.min.js"></script>
+    <!-- /Bootstrap Core JavaScript -->
+    <!-- morris JavaScript -->
+    <script src="/js/raphael-min.js"></script>
+    <script src="../js/admin/adminCommon.js"></script>
+    <script src="../js/admin/adminBase.js"></script>
+    <script src="../js/admin/donhang.js"></script>
+
+</body>
+</html>
